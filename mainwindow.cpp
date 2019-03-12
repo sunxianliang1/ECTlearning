@@ -51,6 +51,8 @@
  * 2018.4.4
  * 修复了一个bug，该bug导致读取文件时若遇到两个相同的时间自动停止读取
  * 修改后使用atEnd()函数判断文件结尾
+ * 2019.3.12
+ * 读标定版本
  ****/
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),

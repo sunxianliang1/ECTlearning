@@ -53,9 +53,9 @@ private slots:
     void on_pushBut_EmptyCalibration_clicked();
     void on_pushBut_FullCalibration_clicked();
     void on_pushBut_StartRead_clicked();
-    void on_pushBut_ReadCalibrition_clicked();
     void on_pushBut_StopRead_clicked();
 public slots:
+    void on_pushBut_ReadCalibrition_clicked();
     void slot_received(qint16* a);
     void slot_setFPS();
 private:
