@@ -356,14 +356,16 @@ void MainWindow::on_action_open_file_triggered()//打开文件
         QMessageBox::warning(this,tr("警告"),tr("已经在测量了"));
     if(ccway==bynull)
     {
-        read_cdata_dat.strname=QFileDialog::getOpenFileName(this,tr("打开历史数据"),root_save_directory,tr("数据文件(*dat *txt)"));
+        uicommun->on_pushBut_ReadCalibrition_clicked();
+        set_k_of_calibration();
+        read_cdata_dat.strname=QFileDialog::getOpenFileName(this,tr("打开历史数据"),root_save_directory,tr("数据文件(*txt)"));
         read_cdata_dat.filename=new QFile(read_cdata_dat.strname);
         if(!read_cdata_dat.filename->open(QIODevice::ReadOnly))
         {
             QMessageBox::warning(this,tr("警告"),tr("文件打开失败！"));
             return;
         }
-        read_cdata_dat.dat.setDevice(read_cdata_dat.filename);
+        read_cdata_dat.text.setDevice(read_cdata_dat.filename);
         QFileInfo info(read_cdata_dat.strname);
         now_save_directory = info.absolutePath();
         open_file();
@@ -429,11 +431,22 @@ void MainWindow::read_data_in_file()//从文件读取
         on_action_stopfile_triggered();
         return;
     }
-    read_cdata_dat.dat>>time_datetime;
-    str_datetime=time_datetime.toString("yyyy.MM.dd-hh:mm:ss.zzz");
-    for (int i=0;i<N;i++)
+
+//    read_cdata_dat.dat>>time_datetime;
+//    str_datetime=time_datetime.toString("yyyy.MM.dd-hh:mm:ss.zzz");
+//    for (int i=0;i<N;i++)
+//    {
+//        read_cdata_dat.dat>>fltcapdata[i];
+//    }
+    QString a;
+    read_cdata_dat.text>>a;
+    time_datetime=QDateTime::fromString(a,"yyyy.MM.dd-hh:mm:ss.zzz");
+    str_datetime=a;
+    int cap[28];
+    for (int i=0;i<28;i++)
     {
-        read_cdata_dat.dat>>fltcapdata[i];
+        read_cdata_dat.text>>cap[i];
+        fltcapdata[i]=(cap[i]-uicommun->intcapempty[i])/k_of_calibration+comdata.fltcapempty[i];
     }
 
 }
