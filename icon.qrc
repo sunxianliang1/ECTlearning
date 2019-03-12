@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>漂亮ico/媒体/c6.ico</file>
+        <file>漂亮ico/媒体/pause_24.png</file>
+        <file>漂亮ico/媒体/play_24.png</file>
+        <file>漂亮ico/媒体/stop.png</file>
+        <file>漂亮ico/文件操作/check-6.png</file>
+        <file>漂亮ico/文件操作/copy.ico</file>
+        <file>漂亮ico/文件操作/cut.ico</file>
+        <file>漂亮ico/文件操作/delete_2.png</file>
+        <file>漂亮ico/文件操作/document_file.ico</file>
+        <file>漂亮ico/文件操作/folder.ico</file>
+        <file>漂亮ico/文件操作/folder.png</file>
+        <file>漂亮ico/文件操作/gear.png</file>
+        <file>漂亮ico/文件操作/media_playback_start.ico</file>
+        <file>漂亮ico/文件操作/minus_2.png</file>
+        <file>漂亮ico/文件操作/paste.ico</file>
+        <file>漂亮ico/文件操作/save_as.ico</file>
+        <file>漂亮ico/文件操作/settings (1).png</file>
+        <file>漂亮ico/文件操作/settings (2).png</file>
+        <file>漂亮ico/文件操作/settings.png</file>
+        <file>漂亮ico/文件操作/logout.png</file>
+        <file>shader/simple.frag</file>
+        <file>shader/simple.vert</file>
+    </qresource>
+</RCC>
